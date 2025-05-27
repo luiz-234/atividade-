@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja do Robin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4 {
+      color: #b30000;
+      margin-bottom: 10px;
+    }
+
+    nav.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 15px;
+      padding: 10px 0;
+      background-color: #222;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #b30000;
+    }
+
+    form {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #b30000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #800000;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: center;
+      border: 2px solid #b30000;
+    }
+
+    table th {
+      background-color: #b30000;
+      color: white;
+    }
+
+    table img {
+      width: 80px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    p {
+      margin-top: 30px;
+      text-align: center;
+      color: #777;
+    }
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #b30000;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1 class="fade-in">Loja do Robin</h1>
+  <nav id="mainNav">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#categorias">Categorias</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <form id="searchForm">
+    <label>Buscar</label>
+    <input type="text" id="busca" />
+    <button type="submit">Buscar</button>
+  </form>
+
+  <img src="https://i.pinimg.com/736x/70/ae/a0/70aea03bad0417e8bff62091d2cf321d.jpg" class="fade-in"/>
+
+  <h2 class="fade-in">Categorias</h2>
+  <nav>
+    <ul>
+      <li><a href="#">Roupas</a></li>
+      <li><a href="#">Elementos</a></li>
+      <li><a href="#">Livros</a></li>
+      <li><a href="#">Acessórios</a></li>
+    </ul>
+  </nav>
+
+  <h3 id="produtos" class="fade-in">Produtos</h3>
+  <table class="fade-in">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Foto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Batarang</td>
+        <td>R$ 50,00</td>
+        <td><img src="https://img1.yeggi.com/page_images_cache/2095994_robins-batarang-by-techoutreach"></td>
+      </tr>
+      <tr>
+        <td>Katana</td>
+        <td>R$ 75,00</td>
+        <td><img src="https://cdn.awsli.com.br/200x200/2515/2515067/produto/18367172031eb1d5259.jpg"></td>
+      </tr>
+      <tr>
+        <td>Jogo</td>
+        <td>R$ 99,90</td>
+        <td><img src="https://pm1.aminoapps.com/6748/b51958525d592377a41ac56c5c400796bf5e111bv2_hq.jpg"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="fade-in">Fale com Alfred</h4>
+  <form id="formContato">
+    <label>Nome:</label>
+    <input type="text" required /><br /><br />
+
+    <label>E-mail:</label>
+    <input type="email" required /><br /><br />
+
+    <label>Assunto:</label>
+    <input type="text" id="assunto" name="assunto" required /><br /><br />
+
+    <label>Mensagem:</label>
+    <textarea></textarea><br /><br />
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h1 class="fade-in">Redes de Comunicação</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Jornal de Gotham</a></li>
+      <li><a href="#">Cassino do Pinguim</a></li>
+      <li><a href="#">Tecnologia dos Wayne</a></li>
+    </ul>
+  </nav>
+
+  <p>&copy; 2025 Fã Clube do Robin. Todos os direitos reservados.</p>
+
+  <button id="backToTop">&#8679;</button>
+
+  <script>
+    // Interação
+    const nav = document.getElementById("mainNav");
+    const sticky = nav.offsetTop;
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > sticky) {
+        nav.classList.add("sticky");
+      } else {
+        nav.classList.remove("sticky");
+      }
+    });
+
+    // Interação dos Botões
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    
+    // Busca
+    document.getElementById("searchForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const termo = document.getElementById("busca").value;
+      alert(`Você buscou por: ${termo}`);
+    });
+
+    // Mensagem
+    document.getElementById("formContato").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Mensagem enviada com sucesso para nosso Mordomo Alfred!");
+      this.reset();
+    });
+
+    const fadeElements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
